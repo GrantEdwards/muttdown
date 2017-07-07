@@ -41,7 +41,7 @@ def convert_one(part, config):
         else:
             md = markdown.markdown(text)
         if config.css:
-            md = '<style>' + config.css + '</style>' + md
+            md = '<style>\n' + config.css + '</style>\n' + '<body>\n' + md + '\n</body>\n'
             md = pynliner.fromString(md)
         message = MIMEText(md, 'html')
         return message
