@@ -25,7 +25,7 @@ else:
     __version__ = 'testing'
 
 def convert_markdown(text,config):
-    return markdown.markdown(text,output_format="html5")
+    return markdown.markdown(text,config.markdown_extensions,output_format="html5")
 
 def convert_preformat(text,config):
     import cgi
